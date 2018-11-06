@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TXTextControl;
 using TXTextControl.DocumentServer.Fields;
@@ -40,14 +33,19 @@ namespace tx_contentcontrols
             // loop through all fields
             foreach (ApplicationField field in textControl1.ApplicationFields)
             {
-                Type type = ContentControlFieldAdapter.GetContentControlType(field);
+                if (field.TypeName != "SDTRUN" && field.TypeName != "SDTBLOCK")
+                    return;
+
+                ContentControlFieldAdapter adapterField = ContentControlFieldAdapter.CreateContentControl(field);
+
+                var fieldType = adapterField.GetType();
 
                 // based on the type, create a new ContentControl object and
                 // display some field information in a MessageBox
-                switch (type.Name)
+                switch (fieldType.Name)
                 {
                     case "RichTextContentControl":
-                        RichTextContentControl rtb = new RichTextContentControl(field);
+                        RichTextContentControl rtb = (RichTextContentControl)adapterField;
 
                         MessageBox.Show("RichTextContentControl:\r\nText: " + rtb.Text + "\r\n" +
                             "Title: " + rtb.Title + "\r\n" +
@@ -55,7 +53,7 @@ namespace tx_contentcontrols
                         break;
 
                     case "PlainTextContentControl":
-                        PlainTextContentControl ptc = new PlainTextContentControl(field);
+                        PlainTextContentControl ptc = (PlainTextContentControl)adapterField;
 
                         MessageBox.Show("PlainTextContentControl:\r\nText: " + ptc.Text + "\r\n" +
                             "Title: " + ptc.Title + "\r\n" +
@@ -63,7 +61,7 @@ namespace tx_contentcontrols
                         break;
 
                     case "CheckBoxContentControl":
-                        CheckBoxContentControl check = new CheckBoxContentControl(field);
+                        CheckBoxContentControl check = (CheckBoxContentControl)adapterField;
 
                         MessageBox.Show("CheckBoxContentControl:\r\nChecked: " + check.Checked.ToString() + "\r\n" +
                             "Title: " + check.Title + "\r\n" +
@@ -71,8 +69,8 @@ namespace tx_contentcontrols
                         break;
 
                     case "ComboBoxContentControl":
-                        ComboBoxContentControl combo = new ComboBoxContentControl(field);
-                        
+                        ComboBoxContentControl combo = (ComboBoxContentControl)adapterField;
+
                         string items = "";
 
                         foreach (ComboBoxListItem item in combo.ListItems)
@@ -87,7 +85,7 @@ namespace tx_contentcontrols
                         break;
 
                     case "DateContentControl":
-                        DateContentControl date = new DateContentControl(field);
+                        DateContentControl date = (DateContentControl)adapterField;
 
                         MessageBox.Show("DateContentControl:\r\n" +
                             "Title: " + date.Title + "\r\n" +
@@ -95,11 +93,11 @@ namespace tx_contentcontrols
                             "Date: " + date.Date + "\r\n" +
                             "Calendar: " + date.Calendar + "\r\n" +
                             "Format: " + date.DateFormat + "\r\n");
-                            
+
                         break;
 
                     case "DropDownListContentControl":
-                        DropDownListContentControl drop = new DropDownListContentControl(field);
+                        DropDownListContentControl drop = (DropDownListContentControl)adapterField;
 
                         string dropItems = "";
 

@@ -44,21 +44,21 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TXDocumentServer, Version=21.0.700.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
+    <Reference Include="TXDocumentServer, Version=26.0.1200.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 20.0.NET for Windows Forms\Assembly\TXDocumentServer.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 25.0.NET for Windows Forms\Assembly\TXDocumentServer.dll</HintPath>
     </Reference>
-    <Reference Include="TXTextControl, Version=21.0.1400.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
+    <Reference Include="TXTextControl, Version=26.0.1900.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 20.0.NET for Windows Forms\Assembly\TXTextControl.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 25.0.NET for Windows Forms\Assembly\TXTextControl.dll</HintPath>
     </Reference>
-    <Reference Include="TXTextControl.Server, Version=21.0.600.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
+    <Reference Include="TXTextControl.Server, Version=26.0.1100.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 20.0.NET for Windows Forms\Assembly\TXTextControl.Server.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 25.0.NET for Windows Forms\Assembly\TXTextControl.Server.dll</HintPath>
     </Reference>
-    <Reference Include="TXTextControl.Windows.Forms, Version=21.0.600.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
+    <Reference Include="TXTextControl.Windows.Forms, Version=26.0.1100.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 20.0.NET for Windows Forms\Assembly\TXTextControl.Windows.Forms.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 25.0.NET for Windows Forms\Assembly\TXTextControl.Windows.Forms.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -98,12 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContentControls\ContentControls.csproj">
-      <Project>{3d6b5c80-f133-40da-a390-c096bdd49916}</Project>
-      <Name>ContentControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
